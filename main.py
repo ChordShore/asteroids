@@ -22,6 +22,7 @@ def main():
 
         #draw player
         player.draw(screen)
+        player.update(delta_time)
 
         #render functions
         delta_time = (clock.tick(60))/1000
