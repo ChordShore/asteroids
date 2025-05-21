@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import *
 
 def main():
     print("Starting Asteroids!")
@@ -9,16 +10,24 @@ def main():
     clock = pygame.time.Clock()
     delta_time = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    loop_number = 0
 
-    number = 0
-
-    while number == 0:
+    while loop_number == 0:
+        #draw screen
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
+
+        #draw player
+        player.draw(screen)
+
+        #render functions
         delta_time = (clock.tick(60))/1000
         pygame.display.flip()
+
+
 
 if __name__ == "__main__":
     main()
