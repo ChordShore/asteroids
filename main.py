@@ -1,3 +1,4 @@
+import sys
 import pygame
 from constants import *
 from player import *
@@ -34,6 +35,10 @@ def main():
         updatable.update(delta_time)
         for drawable_items in drawable:
             drawable_items.draw(screen)
+        for asteroid in asteroids:
+            if asteroid.check_collision(player) == True:
+                print("Game over!")
+                sys.exit()
 
         #render functions
         delta_time = (clock.tick(60))/1000

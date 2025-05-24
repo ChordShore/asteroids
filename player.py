@@ -31,8 +31,8 @@ class Player(CircleShape):
         if keys[pygame.K_w]:
             self.move(delta_time)
         if keys[pygame.K_s]:
-            self.move(delta_time)
+            self.move(-delta_time)
         if keys[pygame.K_a]:
-            self.rotate(delta_time)
-        if keys[pygame.K_d]:
             self.rotate(delta_time * -1)
+        if keys[pygame.K_d]:
+            self.rotate(delta_time)
